@@ -1,5 +1,8 @@
-﻿namespace ContractTransactionFramework.Persistence.Features.Contract;
+﻿using MediatR;
 
-public record Put
+namespace ContractTransactionFramework.Persistence.Features.Contract;
+
+public record Put : IRequest<Models.Contract>
 {
+
 }

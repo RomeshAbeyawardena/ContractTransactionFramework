@@ -1,5 +1,8 @@
-﻿namespace ContractTransactionFramework.Persistence.Features.Contract;
+﻿using ContractTransactionFramework.Features.Contract;
+using MediatR;
 
-public record Get
+namespace ContractTransactionFramework.Persistence.Features.Contract;
+
+public record Get : IRequest<IEnumerable<Models.Contract>>, IQuery
 {
 }

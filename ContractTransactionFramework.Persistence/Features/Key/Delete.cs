@@ -1,5 +1,7 @@
-﻿namespace ContractTransactionFramework.Persistence.Features.Key;
+﻿using MediatR;
 
-public record Delete
+namespace ContractTransactionFramework.Persistence.Features.Key;
+
+public record Delete : IRequest
 {
 }

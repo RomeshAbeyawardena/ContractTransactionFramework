@@ -1,5 +1,8 @@
-﻿namespace ContractTransactionFramework.Persistence.Features.Key;
+﻿using ContractTransactionFramework.Features.Contract;
+using MediatR;
 
-public record GetPaged
+namespace ContractTransactionFramework.Persistence.Features.Key;
+
+public record GetPaged : IRequest<IEnumerable<Models.Key>>, IQuery
 {
 }

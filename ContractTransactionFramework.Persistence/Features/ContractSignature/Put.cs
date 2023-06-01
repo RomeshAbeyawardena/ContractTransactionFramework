@@ -1,5 +1,8 @@
-﻿namespace ContractTransactionFramework.Persistence.Features.ContractSignature;
+﻿using MediatR;
 
-public record Put
+namespace ContractTransactionFramework.Persistence.Features.ContractSignature;
+
+public record Put : IRequest<Models.ContractSignature>
 {
+
 }

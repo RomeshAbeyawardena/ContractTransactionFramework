@@ -1,5 +1,8 @@
-﻿namespace ContractTransactionFramework.Persistence.Features.Signature;
+﻿using ContractTransactionFramework.Features.Contract;
+using MediatR;
 
-public record GetPaged
+namespace ContractTransactionFramework.Persistence.Features.Signature;
+
+public record GetPaged : IRequest<IEnumerable<Models.Signature>>, IQuery
 {
 }

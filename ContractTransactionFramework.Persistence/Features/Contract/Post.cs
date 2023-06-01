@@ -1,5 +1,9 @@
-﻿namespace ContractTransactionFramework.Persistence.Features.Contract;
+﻿using ContractTransactionFramework.Models;
+using MediatR;
 
-public record Post
+namespace ContractTransactionFramework.Persistence.Features.Contract;
+
+public record Post : IRequest<Models.Contract>
 {
+    
 }

@@ -1,5 +1,8 @@
-﻿namespace ContractTransactionFramework.Persistence.Features.Intent;
+﻿using MediatR;
 
-public record Put
+namespace ContractTransactionFramework.Persistence.Features.Intent;
+
+public record Put : IRequest<Models.Intent>
 {
+
 }

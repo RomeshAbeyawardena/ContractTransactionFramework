@@ -1,6 +1,8 @@
-﻿namespace ContractTransactionFramework.Persistence.Features.Signature
+﻿using MediatR;
+
+namespace ContractTransactionFramework.Persistence.Features.Signature;
+
+public record Put : IRequest<Models.Signature>
 {
-    public record Put
-    {
-    }
+
 }

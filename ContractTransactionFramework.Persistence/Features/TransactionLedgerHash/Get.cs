@@ -1,5 +1,8 @@
-﻿namespace ContractTransactionFramework.Persistence.Features.TransactionLedgerHash;
+﻿using ContractTransactionFramework.Features.Contract;
+using MediatR;
 
-public record Get
+namespace ContractTransactionFramework.Persistence.Features.TransactionLedgerHash;
+
+public record Get : IRequest<IEnumerable<Models.TransactionLedgerHash>>, IQuery
 {
 }

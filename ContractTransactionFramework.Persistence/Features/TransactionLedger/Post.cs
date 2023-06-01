@@ -1,5 +1,9 @@
-﻿namespace ContractTransactionFramework.Persistence.Features.TransactionLedger;
+﻿using ContractTransactionFramework.Models;
+using MediatR;
 
-public record Post
+namespace ContractTransactionFramework.Persistence.Features.TransactionLedger;
+
+public record Post : IRequest<Models.TransactionLedger>
 {
+    
 }

@@ -1,5 +1,8 @@
-﻿namespace ContractTransactionFramework.Persistence.Features.Signature;
+﻿using ContractTransactionFramework.Features.Contract;
+using MediatR;
 
-public record Get
+namespace ContractTransactionFramework.Persistence.Features.Signature;
+
+public record Get : IRequest<IEnumerable<Models.Signature>>, IQuery
 {
 }

@@ -1,5 +1,8 @@
-﻿namespace ContractTransactionFramework.Persistence.Features.Intent;
+﻿using ContractTransactionFramework.Features.Contract;
+using MediatR;
 
-public record GetPaged
+namespace ContractTransactionFramework.Persistence.Features.Intent;
+
+public record GetPaged : IRequest<IEnumerable<Models.Intent>>, IQuery
 {
 }
