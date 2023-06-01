@@ -1,5 +1,7 @@
-﻿namespace ContractTransactionFramework.Features.Contract;
+﻿using MediatR;
 
-public record Delete
+namespace ContractTransactionFramework.Features.Contract;
+
+public record Delete : IRequest
 {
 }

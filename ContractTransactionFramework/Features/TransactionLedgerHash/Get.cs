@@ -1,5 +1,8 @@
-﻿namespace ContractTransactionFramework.Features.TransactionLedgerHash;
+﻿using ContractTransactionFramework.Features.TransactionLedgerHash;
+using MediatR;
 
-public record Get
+namespace ContractTransactionFramework.Features.TransactionLedgerHash;
+
+public record Get : IRequest<IEnumerable<Models.TransactionLedgerHash>>, IQuery
 {
 }

@@ -1,5 +1,12 @@
-﻿namespace ContractTransactionFramework.Features.ContractSignature;
+﻿using ContractTransactionFramework.Models;
+using MediatR;
 
-public record Put
+namespace ContractTransactionFramework.Features.ContractSignature;
+
+public record Put : IRequest<Models.ContractSignature>, IContractSignature
 {
+    public Guid ContractId { get; set; }
+    public Guid SignatureId { get; set; }
+    public bool IsSuppressed { get; set; }
+    public DateTimeOffset Created { get; set; }
 }

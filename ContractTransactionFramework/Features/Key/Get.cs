@@ -1,5 +1,8 @@
-﻿namespace ContractTransactionFramework.Features.Key;
+﻿using ContractTransactionFramework.Features.Key;
+using MediatR;
 
-public record Get
+namespace ContractTransactionFramework.Features.Key;
+
+public record Get : IRequest<IEnumerable<Models.Key>>, IQuery
 {
 }

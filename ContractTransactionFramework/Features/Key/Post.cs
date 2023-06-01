@@ -1,5 +1,13 @@
-﻿namespace ContractTransactionFramework.Features.Key;
+﻿using ContractTransactionFramework.Models;
+using MediatR;
 
-public record Post
+namespace ContractTransactionFramework.Features.Key;
+
+public record Post : IRequest<Models.Key>, IKey
 {
+    public Guid IntentId { get; set; }
+    public string? Value { get; set; }
+    public string? KnownSecret { get; set; }
+    public bool IsSuppresed { get; set; }
+    public DateTimeOffset Created { get; set; }
 }

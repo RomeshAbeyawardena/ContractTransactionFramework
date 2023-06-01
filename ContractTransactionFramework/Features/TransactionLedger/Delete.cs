@@ -1,5 +1,7 @@
-﻿namespace ContractTransactionFramework.Features.TransactionLedger;
+﻿using MediatR;
 
-public record Delete
+namespace ContractTransactionFramework.Features.TransactionLedger;
+
+public record Delete : IRequest
 {
 }

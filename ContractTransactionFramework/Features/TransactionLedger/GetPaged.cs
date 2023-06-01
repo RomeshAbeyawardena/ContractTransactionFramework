@@ -1,5 +1,8 @@
-﻿namespace ContractTransactionFramework.Features.TransactionLedger;
+﻿using ContractTransactionFramework.Features.TransactionLedger;
+using MediatR;
 
-public record GetPaged
+namespace ContractTransactionFramework.Features.TransactionLedger;
+
+public record GetPaged : IRequest<IEnumerable<Models.TransactionLedger>>, IQuery
 {
 }

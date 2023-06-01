@@ -1,4 +1,4 @@
-﻿using ContractTransactionFramework.Features.Contract;
+﻿using ContractTransactionFramework.Features.Key;
 using MediatR;
 
 namespace ContractTransactionFramework.Persistence.Features.Key;

@@ -1,5 +1,7 @@
-﻿namespace ContractTransactionFramework.Features.Intent;
+﻿using MediatR;
 
-public record Delete
+namespace ContractTransactionFramework.Features.Intent;
+
+public record Delete : IRequest
 {
 }

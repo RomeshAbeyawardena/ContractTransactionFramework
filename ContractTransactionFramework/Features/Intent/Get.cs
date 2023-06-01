@@ -1,5 +1,8 @@
-﻿namespace ContractTransactionFramework.Features.Intent;
+﻿using ContractTransactionFramework.Features.Intent;
+using MediatR;
 
-public record Get
+namespace ContractTransactionFramework.Features.Intent;
+
+public record Get : IRequest<IEnumerable<Models.Intent>>, IQuery
 {
 }

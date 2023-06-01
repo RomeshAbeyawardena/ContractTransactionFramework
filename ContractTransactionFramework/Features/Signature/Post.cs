@@ -1,5 +1,12 @@
-﻿namespace ContractTransactionFramework.Features.Signature;
+﻿using ContractTransactionFramework.Models;
+using MediatR;
 
-public record Post
+namespace ContractTransactionFramework.Features.Signature;
+
+public record Post : IRequest<Models.Signature>, ISignature
 {
+    public Guid SignatureKeyId { get; set; }
+    public Guid IssuerKeyId { get; set; }
+    public Guid IntentId { get; set; }
+    public DateTimeOffset Created { get; set; }
 }

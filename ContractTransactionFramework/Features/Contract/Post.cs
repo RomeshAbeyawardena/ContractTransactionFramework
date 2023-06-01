@@ -1,5 +1,13 @@
-﻿namespace ContractTransactionFramework.Features.Contract;
+﻿using ContractTransactionFramework.Models;
+using MediatR;
 
-public record Post
+namespace ContractTransactionFramework.Features.Contract;
+
+public record Post : IRequest<Models.Contract>, IContract
 {
+    public Guid? TransactionId { get; set; }
+    public Guid? ContractId { get; set; }
+    public string? Name { get; set; }
+    public bool IsSuppressed { get; set; }
+    public DateTimeOffset Created { get; set; }
 }
