@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContractTransactionFramewor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContractTransactionFramework.Core", "ContractTransactionFramework.Core\ContractTransactionFramework.Core.csproj", "{70F24D8B-ED7E-4130-A5C3-D34E0C64248A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContractTransactionFramework.Persistence.SqlServer", "ContractTransactionFramework.Persistence.SqlServer\ContractTransactionFramework.Persistence.SqlServer.csproj", "{BE2638D0-264B-4B1B-B57D-C74214BAD76D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +44,9 @@ Global
 		{70F24D8B-ED7E-4130-A5C3-D34E0C64248A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70F24D8B-ED7E-4130-A5C3-D34E0C64248A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70F24D8B-ED7E-4130-A5C3-D34E0C64248A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE2638D0-264B-4B1B-B57D-C74214BAD76D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE2638D0-264B-4B1B-B57D-C74214BAD76D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE2638D0-264B-4B1B-B57D-C74214BAD76D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE2638D0-264B-4B1B-B57D-C74214BAD76D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
