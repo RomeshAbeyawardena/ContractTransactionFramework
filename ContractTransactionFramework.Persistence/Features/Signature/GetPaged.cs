@@ -1,8 +1,14 @@
 ﻿using ContractTransactionFramework.Features.Signature;
-using MediatR;
+using RST.Contracts;
+using RST.Enumerations;
 
 namespace ContractTransactionFramework.Persistence.Features.Signature;
 
-public record GetPaged : IRequest<IEnumerable<Models.Signature>>, IQuery
+public record GetPaged : IPagedRequest<Models.Signature>, IQuery
 {
+    public int? PageIndex { get; set; }
+    public int? TotalItemsPerPage { get; set; }
+    public IEnumerable<string>? OrderByFields { get; set; }
+    public SortOrder? SortOrder { get; set; }
+    public bool? NoTracking { get; set; }
 }

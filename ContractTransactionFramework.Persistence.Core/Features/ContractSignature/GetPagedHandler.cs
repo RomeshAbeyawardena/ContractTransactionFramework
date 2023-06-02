@@ -1,11 +1,12 @@
 ﻿using ContractTransactionFramework.Persistence.Features.ContractSignature;
 using MediatR;
+using RST.Contracts;
 
 namespace ContractTransactionFramework.Persistence.Core.Features.ContractSignature;
 
-public class GetPagedHandler : IRequestHandler<GetPaged, IEnumerable<Models.ContractSignature>>
+public class GetPagedHandler : IRequestHandler<GetPaged, IPagedResult<Models.ContractSignature>>
 {
-    public Task<IEnumerable<Models.ContractSignature>> Handle(GetPaged request, CancellationToken cancellationToken)
+    public Task<IPagedResult<Models.ContractSignature>> Handle(GetPaged request, CancellationToken cancellationToken)
     {
         throw new NotImplementedException();
     }

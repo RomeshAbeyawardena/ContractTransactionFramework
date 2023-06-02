@@ -1,11 +1,12 @@
 ﻿using ContractTransactionFramework.Persistence.Features.TransactionLedger;
 using MediatR;
+using RST.Contracts;
 
 namespace ContractTransactionFramework.Persistence.Core.Features.TransactionLedger;
 
-public class GetPagedHandler : IRequestHandler<GetPaged, IEnumerable<Models.TransactionLedger>>
+public class GetPagedHandler : IRequestHandler<GetPaged, IPagedResult<Models.TransactionLedger>>
 {
-    public Task<IEnumerable<Models.TransactionLedger>> Handle(GetPaged request, CancellationToken cancellationToken)
+    public Task<IPagedResult<Models.TransactionLedger>> Handle(GetPaged request, CancellationToken cancellationToken)
     {
         throw new NotImplementedException();
     }
