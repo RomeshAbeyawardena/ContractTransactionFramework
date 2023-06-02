@@ -5,4 +5,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ContractTransactionFramework.Persistence\ContractTransactionFramework.Persistence.csproj" />
+  </ItemGroup>
 </Project>
