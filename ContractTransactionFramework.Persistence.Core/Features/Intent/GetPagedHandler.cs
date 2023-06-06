@@ -1,13 +1,18 @@
 ﻿using ContractTransactionFramework.Persistence.Features.Intent;
-using MediatR;
 using RST.Contracts;
+using RST.Mediatr.Extensions;
 
 namespace ContractTransactionFramework.Persistence.Core.Features.Intent;
 
-public class GetPagedHandler : IRequestHandler<GetPaged, IPagedResult<Models.Intent>>
+public class GetPagedHandler : PagedRepositoryHandlerBase<GetPaged, Models.Intent>
 {
-    public Task<IPagedResult<Models.Intent>> Handle(GetPaged request, CancellationToken cancellationToken)
+    public GetPagedHandler(IServiceProvider serviceProvider) : base(serviceProvider)
     {
-        throw new NotImplementedException();
+    }
+
+    public override Task<IPagedResult<Models.Intent>> Handle(GetPaged request, CancellationToken cancellationToken)
+    {
+        var builder = Repository!.QueryBuilder;
+        return base.ProcessPagedQuery(builder, request, cancellationToken);
     }
 }

@@ -1,5 +1,7 @@
-﻿namespace ContractTransactionFramework.Features.Intent;
+﻿using RST.Contracts;
 
-public interface IQuery
+namespace ContractTransactionFramework.Features.Intent;
+
+public interface IQuery : IOrderByQuery
 {
 }

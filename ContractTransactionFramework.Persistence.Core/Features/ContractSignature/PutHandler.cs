@@ -1,12 +1,20 @@
-﻿using ContractTransactionFramework.Persistence.Features.ContractSignature;
-using MediatR;
+﻿using AutoMapper;
+using ContractTransactionFramework.Persistence.Features.ContractSignature;
+using RST.DependencyInjection.Extensions.Attributes;
+using RST.Mediatr.Extensions;
 
 namespace ContractTransactionFramework.Persistence.Core.Features.ContractSignature;
 
-public class PutHandler : IRequestHandler<Put, Models.ContractSignature>
+public class PutHandler : RepositoryHandlerBase<Put, Models.ContractSignature, Models.ContractSignature>
 {
-    public Task<Models.ContractSignature> Handle(Put request, CancellationToken cancellationToken)
+    [Inject] public IMapper? Mapper { get; set; }
+
+    public PutHandler(IServiceProvider serviceProvider) : base(serviceProvider)
     {
-        throw new NotImplementedException();
+    }
+
+    public override Task<Models.ContractSignature> Handle(Put request, CancellationToken cancellationToken)
+    {
+        return ProcessSave(request, Mapper!.Map<Models.ContractSignature>, cancellationToken);
     }
 }

@@ -1,12 +1,18 @@
 ﻿using ContractTransactionFramework.Persistence.Features.Intent;
-using MediatR;
+using RST.Mediatr.Extensions;
 
 namespace ContractTransactionFramework.Persistence.Core.Features.Intent;
 
-public class GetHandler : IRequestHandler<Get, IEnumerable<Models.Intent>>
+public class GetHandler : RepositoryHandlerBase<Get, IEnumerable<Models.Intent>,
+    Models.Intent>
 {
-    public Task<IEnumerable<Models.Intent>> Handle(Get request, CancellationToken cancellationToken)
+    public GetHandler(IServiceProvider serviceProvider) : base(serviceProvider)
     {
-        throw new NotImplementedException();
+    }
+
+    public override Task<IEnumerable<Models.Intent>> Handle(Get request, CancellationToken cancellationToken)
+    {
+        var builder = Repository!.QueryBuilder;
+        return ProcessQuery(builder.Filter(request), request, cancellationToken);
     }
 }
