@@ -1,12 +1,19 @@
 ﻿using ContractTransactionFramework.Persistence.Features.ContractSignature;
 using MediatR;
+using RST.Mediatr.Extensions;
 
 namespace ContractTransactionFramework.Persistence.Core.Features.ContractSignature;
 
-public class GetHandler : IRequestHandler<Get, IEnumerable<Models.ContractSignature>>
+public class GetHandler : RepositoryHandlerBase<Get, IEnumerable<Models.ContractSignature>,
+    Models.ContractSignature>
 {
-    public Task<IEnumerable<Models.ContractSignature>> Handle(Get request, CancellationToken cancellationToken)
+    public GetHandler(IServiceProvider serviceProvider) : base(serviceProvider)
     {
-        throw new NotImplementedException();
+    }
+
+    public override Task<IEnumerable<Models.ContractSignature>> Handle(Get request, CancellationToken cancellationToken)
+    {
+        var builder = Repository!.QueryBuilder;
+        return ProcessQuery(builder.Filter(request), request, cancellationToken);
     }
 }

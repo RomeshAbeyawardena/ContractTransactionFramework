@@ -1,5 +1,7 @@
-﻿namespace ContractTransactionFramework.Features.ContractSignature;
+﻿using RST.Contracts;
 
-public interface IQuery
+namespace ContractTransactionFramework.Features.ContractSignature;
+
+public interface IQuery : IOrderByQuery
 {
 }

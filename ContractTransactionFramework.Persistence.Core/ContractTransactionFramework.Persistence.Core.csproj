@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="RST.Mediatr.Extensions" Version="1.0.2.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ContractTransactionFramework.Persistence\ContractTransactionFramework.Persistence.csproj" />
   </ItemGroup>
 </Project>
