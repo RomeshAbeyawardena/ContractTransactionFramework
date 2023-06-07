@@ -1,12 +1,20 @@
-﻿using ContractTransactionFramework.Persistence.Features.TransactionLedger;
+﻿using AutoMapper;
+using ContractTransactionFramework.Persistence.Features.TransactionLedger;
 using MediatR;
+using RST.DependencyInjection.Extensions.Attributes;
+using RST.Mediatr.Extensions;
 
 namespace ContractTransactionFramework.Persistence.Core.Features.TransactionLedger;
 
-public class PostHandler : IRequestHandler<Post, Models.TransactionLedger>
+public class PostHandler : RepositoryHandlerBase<Post, Models.TransactionLedger, Models.TransactionLedger>
 {
-    public Task<Models.TransactionLedger> Handle(Post request, CancellationToken cancellationToken)
+    [Inject] public IMapper? Mapper { get; set; }
+    public PostHandler(IServiceProvider serviceProvider) : base(serviceProvider)
     {
-        throw new NotImplementedException();
+    }
+
+    public override Task<Models.TransactionLedger> Handle(Post request, CancellationToken cancellationToken)
+    {
+        return ProcessSave(request, Mapper!.Map<Models.TransactionLedger>, cancellationToken);
     }
 }

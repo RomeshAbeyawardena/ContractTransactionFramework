@@ -1,12 +1,21 @@
-﻿using ContractTransactionFramework.Persistence.Features.Key;
+﻿using AutoMapper;
+using ContractTransactionFramework.Persistence.Features.Key;
 using MediatR;
+using RST.DependencyInjection.Extensions.Attributes;
+using RST.Mediatr.Extensions;
 
 namespace ContractTransactionFramework.Persistence.Core.Features.Key;
 
-public class PutHandler : IRequestHandler<Put, Models.Key>
+public class PutHandler : RepositoryHandlerBase<Put, Models.Key, Models.Key>
 {
-    public Task<Models.Key> Handle(Put request, CancellationToken cancellationToken)
+    [Inject] public IMapper? Mapper { get; set; }
+
+    public PutHandler(IServiceProvider serviceProvider) : base(serviceProvider)
     {
-        throw new NotImplementedException();
+    }
+
+    public override Task<Models.Key> Handle(Put request, CancellationToken cancellationToken)
+    {
+        return ProcessSave(request, Mapper!.Map<Models.Key>, cancellationToken);
     }
 }

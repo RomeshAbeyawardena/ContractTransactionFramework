@@ -1,9 +1,10 @@
 ﻿using ContractTransactionFramework.Models;
 using MediatR;
+using RST.Contracts;
 
 namespace ContractTransactionFramework.Persistence.Features.TransactionLedger;
 
-public record Post : IRequest<Models.TransactionLedger>, ITransactionLedger
+public record Post : IRequest<Models.TransactionLedger>, ITransactionLedger, IDbCommand
 {
     public Guid ParentTransactionLedgerId { get; set; }
     public Guid? ContractId { get; set; }
@@ -15,4 +16,5 @@ public record Post : IRequest<Models.TransactionLedger>, ITransactionLedger
     public DateTimeOffset CommitedDate { get; set; }
     public bool IsSuppressed { get; set; }
     public DateTimeOffset Created { get; set; }
+    public bool CommitChanges { get; set; }
 }

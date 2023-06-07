@@ -1,13 +1,20 @@
 ﻿using ContractTransactionFramework.Persistence.Features.Signature;
 using MediatR;
 using RST.Contracts;
+using RST.Mediatr.Extensions;
 
 namespace ContractTransactionFramework.Persistence.Core.Features.Signature;
 
-public class GetPagedHandler : IRequestHandler<GetPaged, IPagedResult<Models.Signature>>
+public class GetPagedHandler : PagedRepositoryHandlerBase<GetPaged, Models.Signature>
 {
-    public Task<IPagedResult<Models.Signature>> Handle(GetPaged request, CancellationToken cancellationToken)
+    public GetPagedHandler(IServiceProvider serviceProvider) : base(serviceProvider)
     {
-        throw new NotImplementedException();
+    }
+
+    public override Task<IPagedResult<Models.Signature>> Handle(GetPaged request, CancellationToken cancellationToken)
+    {
+        var builder = Repository!.QueryBuilder;
+        return base.ProcessPagedQuery(builder, request, cancellationToken);
     }
 }
+
