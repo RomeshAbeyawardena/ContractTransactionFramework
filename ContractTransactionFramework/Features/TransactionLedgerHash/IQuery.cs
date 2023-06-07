@@ -1,5 +1,7 @@
-﻿namespace ContractTransactionFramework.Features.TransactionLedgerHash;
+﻿using RST.Contracts;
 
-public interface IQuery
+namespace ContractTransactionFramework.Features.TransactionLedgerHash;
+
+public interface IQuery : IOrderByQuery
 {
 }
