@@ -11,6 +11,7 @@
   </ItemGroup>
   
   <ItemGroup>
+    <ProjectReference Include="..\ContractTransactionFramework.Persistence.Core\ContractTransactionFramework.Persistence.Core.csproj" />
     <ProjectReference Include="..\ContractTransactionFramework\ContractTransactionFramework.csproj" />
   </ItemGroup>
   </Project>
